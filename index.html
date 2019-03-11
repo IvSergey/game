@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=480", initial-scale=1.0>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .wrapper{
+            position: relative;
+            margin: auto;
+            width: 480px;
+            height: 270px;
+            background: url("/img/bg_ho.png") center center no-repeat;
+        }
+
+        .greeting{
+            position: relative;
+            height: 60px;
+            background: url("/img/title_bg.png") center center no-repeat;
+            padding-top: 5%;
+        }
+
+        .title{
+            position: absolute;
+            left: 40%;
+            top: 40%;
+            animation-name: pulse;
+            animation-duration: 2s;
+            transform-origin: 50% 50% 0;
+            animation-iteration-count: infinite;
+            cursor: pointer;
+        }
+
+    
+
+        #play{
+            position: absolute;
+            left: 25%;
+            top: 30%;
+            width: 50%;
+            cursor: pointer;  
+            opacity: 0;
+            transition: .4s;
+           
+        }
+
+        ul{
+            list-style: none;
+        }
+        
+        .anim{
+            animation-name: pulse;
+            animation-duration: 2s;
+            transform-origin: left top 0;
+            animation-iteration-count: infinite;
+            cursor: pointer;
+            transition: 2s;
+
+        }
+
+        .img__item{
+            cursor: pointer;
+        }
+
+        .balerina{
+            position: absolute;
+            left: 50%;
+            top: 40%;
+        }
+
+       
+
+        .comb{
+            position: absolute;
+            left: 86%;
+            top: 47%;
+        }
+
+        .comb_cover{
+            position: absolute;
+            left: 82%;
+            top: 32%;
+        }
+
+        .mirror{
+            position: absolute;
+            top: 36%;
+            left: 18%;
+        }
+
+        .mirror-active, .comb-active, .perfume-active, .balerina-active{
+            animation: forwards;
+            animation-name: zoomOutDown;
+            animation-duration: 2s;
+            /* z-index: 2; */
+            /* transform-origin: 50% 50% 0; */
+        }
+
+        /* .mirror:hover{
+            z-index: 1;
+        } */
+
+        .mirror_cover{
+            position: absolute;
+            top: 38%;
+            left: 13%;
+        }
+
+        .perfume{
+            position: absolute;
+            left: 27%;
+            top: 62%;
+        }
+
+        .perfume_cover{
+            position: absolute;
+            left: 20%;
+            top: 61%;
+        }
+        
+
+        @keyframes pulse {
+            from {
+                -webkit-transform: scale3d(1, 1, 1);
+                transform: scale3d(1, 1, 1);
+            }
+
+            50% {
+                -webkit-transform: scale3d(1.05, 1.05, 1.05);
+                transform: scale3d(1.05, 1.05, 1.05);
+            }
+
+            to {
+                -webkit-transform: scale3d(1, 1, 1);
+                transform: scale3d(1, 1, 1);
+            }
+        }
+
+        @-webkit-keyframes pulse {
+            from {
+                -webkit-transform: scale3d(1, 1, 1);
+                transform: scale3d(1, 1, 1);
+            }
+
+            50% {
+                -webkit-transform: scale3d(1.05, 1.05, 1.05);
+                transform: scale3d(1.05, 1.05, 1.05);
+            }
+
+            to {
+                -webkit-transform: scale3d(1, 1, 1);
+                transform: scale3d(1, 1, 1);
+            }
+        }
+
+        #logo{
+            position: absolute;
+            width: 50%;
+            left: 25%;
+            top: 0;
+            opacity: 0;
+            transition: .4s;
+        }
+
+        footer{
+            background: url("/img/list_bg.png") center center no-repeat;
+            height: 43px;
+            position: absolute;
+            width: 320px;
+            bottom: 0;
+            left: 18%;;
+        }
+        
+        .object__list{
+            display: flex;
+            justify-content: center;
+            padding-left: 0;
+            width: 314px;
+        }
+
+        .object__item{
+            margin-right: 25px;
+        }
+
+        @-webkit-keyframes zoomOutDown {
+        40% {
+            opacity: 1;
+            -webkit-transform: scale3d(0.475, 0.475, 0.475) translate3d(0, -60px, 0);
+            transform: scale3d(0.475, 0.475, 0.475) translate3d(0, -60px, 0);
+            -webkit-animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+            animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+        }
+
+        to {
+            opacity: 0;
+            -webkit-transform: scale3d(0.1, 0.1, 0.1) translate3d(0, 2000px, 0);
+            transform: scale3d(0.1, 0.1, 0.1) translate3d(0, 2000px, 0);
+            -webkit-transform-origin: center bottom;
+            transform-origin: center bottom;
+            -webkit-animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1); 
+            animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+        }
+        }
+
+        @keyframes zoomOutDown {
+        40% {
+            opacity: 1;
+            -webkit-transform: scale3d(0.475, 0.475, 0.475) translate3d(0, -60px, 0);
+            transform: scale3d(0.475, 0.475, 0.475) translate3d(0, -60px, 0);
+            -webkit-animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+            animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+        }
+
+        to {
+            opacity: 0;
+            -webkit-transform: scale3d(0.1, 0.1, 0.1) translate3d(0, 2000px, 0);
+            transform: scale3d(0.1, 0.1, 0.1) translate3d(0, 2000px, 0);
+            -webkit-transform-origin: center bottom;
+            transform-origin: center bottom;
+            -webkit-animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+            /* /* animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1); */
+        }
+        }
+
+    </style>
+</head>
+   
+<body>
+        <div class="wrapper">
+                <div class="greeting" id="greeting">
+                    <img class="title" src="/img/title.png" alt="title"> 
+                </div>
+                <div class="logo">
+                    <img src="/img/logo.png" alt="logo" id="logo">
+                    <img id="play" src="/img/play.png" alt="play">
+                </div>
+                <ul class="img__list" id="img__list">
+                    <li class="img__item">
+                        <img src="/img/mirror.png" alt="mirror" class="mirror" id="mirror">
+                        <!-- <img src="/img/mirror_cover.png" alt="mirror" class="mirror_cover" id="mirror_cover"> -->
+                    </li>
+                    <li class="img__item">
+                        <img src="/img/balerina.png" alt="balerina" class="balerina" id="balerina">
+                    </li>
+                    <li class="img__item">
+                        <img src="/img/perfume.png" alt="perfume" class="perfume" id="perfume">
+                        <!-- <img src="/img/perfume_cover.png" alt="perfume" class="perfume_cover" id="perfume_cover"> -->
+                    </li>
+                    <li class="img__item">
+                        <img src="/img/comb.png" alt="comb" class="comb" id="comb">
+                        <!-- <img src="/img/comb_cover.png" alt="comb" class="comb_cover" id="comb_cover"> -->
+                    </li>
+                </ul>
+                <ul class="img-cover__list" id="img-cover__list">
+                    <li class="img__item-cover">
+                        <img src="/img/mirror_cover.png" alt="mirror" class="mirror_cover" id="mirror_cover">
+                    </li>
+                    <li class="img__item-cover">
+                        <img src="/img/perfume_cover.png" alt="perfume" class="perfume_cover" id="perfume_cover">
+                    </li>
+                    <li class="img__item-cover">
+                        <img src="/img/comb_cover.png" alt="comb" class="comb_cover" id="comb_cover">
+                    </li>
+                </ul>
+                <footer class="footer">
+                    <ul class="object__list" id="object__list">
+                        <li class="object__item" id="object__item" >
+                            <img src="/img/mirror_item.png" alt="" id="mirror_item">
+                        </li>
+                        <li class="object__item">
+                            <img src="/img/balerina_item.png" alt="" id="balerina_item">
+                        </li>
+                        <li class="object__item">
+                            <img src="/img/perfume_item.png" alt="" id="perfume_item">
+                        </li>
+                        <li class="object__item">
+                            <img src="/img/comb_item.png" alt="" id="comb_item">
+                        </li>
+                    </ul>
+                </footer>   
+            </div>
+            <script>
+                const mirror = document.getElementById('mirror');
+                const mirrorCover = document.getElementById('mirror_cover');
+                const mirrorItem = document.getElementById('mirror_item');
+                const comb = document.getElementById('comb');
+                const combCover = document.getElementById('comb_cover');
+                const combItem = document.getElementById('comb_item');
+                const perfume = document.getElementById('perfume');
+                const perfumeCover = document.getElementById('perfume_cover');
+                const perfumeItem = document.getElementById('perfume_item');
+                const balerina = document.getElementById('balerina');
+                const balerinaItem = document.getElementById('balerina_item');
+                const list = document.getElementById('img__list');
+                var item = document.querySelector('img__item active');
+                
+                // const cover = document.getElementById('img-cover__list');
+              
+
+
+                mirror.addEventListener("click", function(){
+                    mirror.classList.add('mirror-active');
+                    mirrorItem.style.transition = "2s";
+                    mirrorItem.style.opacity = "0";
+                    setTimeout(function(){
+                        mirror.parentNode.remove();
+                    },2000)
+                    
+                })
+
+                mirrorCover.addEventListener('mouseover', function(){
+                    mirrorCover.style.zIndex = "0";
+                    mirror.style.zIndex = "1";
+                 })
+
+                  mirror.addEventListener('mouseout', function(){
+                    mirrorCover.style.zIndex = "2";
+                    mirror.style.zIndex = "0";
+                })
+
+                comb.addEventListener("click", function(){
+                    comb.classList.add('comb-active');
+                    combItem.style.transition = "2s";
+                    combItem.style.opacity = "0";
+                    setTimeout(function(){
+                        comb.parentNode.remove();
+                    },2000)
+                })
+
+                combCover.addEventListener('mouseover', function(){
+                    combCover.style.zIndex = "0";
+                    comb.style.zIndex = "1";
+                })
+
+                  comb.addEventListener('mouseout', function(){
+                    combCover.style.zIndex = "2";
+                    comb.style.zIndex = "0";
+                })
+
+                perfume.addEventListener("click", function(){
+                    perfume.classList.add('mirror-active');
+                    perfumeItem.style.transition = "2s";
+                    perfumeItem.style.opacity = "0";
+                    setTimeout(function(){
+                        perfume.parentNode.remove();
+                    },2000)
+                    
+                })
+
+                perfumeCover.addEventListener('mouseover', function(){
+                    perfumeCover.style.zIndex = "0";
+                    perfume.style.zIndex = "1";
+                 
+                })
+
+                  perfume.addEventListener('mouseout', function(){
+                    perfumeCover.style.zIndex = "2";
+                    perfume.style.zIndex = "0";
+                })
+
+                balerina.addEventListener("click", function(){
+                    balerina.classList.add('balerina-active');
+                    balerinaItem.style.transition = "2s";
+                    balerinaItem.style.opacity = "0";
+                    setTimeout(function(){
+                        balerina.parentNode.remove();
+                    },2000)
+                })
+                
+                
+                var timerId = setInterval(function(){
+                    if (list.firstElementChild !==null){
+                        list.firstElementChild.id = 'img__item active';
+                        const itemActive = document.getElementById('img__item active');
+                        itemActive.firstElementChild.classList.add('anim');
+                    }
+                    else {
+                        clearInterval(timerId); 
+                        greeting.remove();
+                        logo.style.opacity = "1";
+                        play.style.opacity = "1";
+                    }
+                        
+                },5000)
+
+                
+            </script>
+</body>
+</html>
